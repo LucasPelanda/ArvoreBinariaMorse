@@ -3,20 +3,17 @@ public class Main {
         ArvoreBinariaMorse arvore = new ArvoreBinariaMorse();
         arvore.inicializar();
 
-        // Inserção de exemplos
-        arvore.inserir("...", "S");
-        arvore.inserir("---", "O");
 
-        // Testes como no enunciado
-        //  arvore.buscar("...");         // Saída: S
-        //  arvore.buscar("---");         // Saída: O
-        arvore.buscar("... --- ... --- ...");   // Saída: SOSOS
-
-        // Testando remoção
-        // System.out.println("Buscar '---' -> '" + arvore.buscar("---") + "'");
-        // System.out.println("\nRemovendo 'O' (---):");
-        // arvore.remover("---");
-        // System.out.println("Buscar '---' -> '" + arvore.buscar("---") + "'");
-
+        // Testes como no enunciado 
+        System.out.println(arvore.buscar("..."));         // Saída esperada: S
+        System.out.println(arvore.buscar("---"));         // Saída esperada: O
+        System.out.println(arvore.buscar("... --- ..."));   // Saída esperada: SOS
+        
+        // Teste de remoção (agora imprimindo o retorno)
+        System.out.println("\n--- Teste de Remocao ---");
+        System.out.println("Buscando '---' (O): " + arvore.buscar("---"));
+        arvore.remover("---");
+        System.out.println("Removido '---' (O)");
+        System.out.println("Buscando '---' (vazio): " + arvore.buscar("---"));
     }
 }
