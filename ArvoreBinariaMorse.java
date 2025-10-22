@@ -111,6 +111,20 @@ public class ArvoreBinariaMorse {
         return frase; 
     }
 
+    public String traduzir(Node raiz, String alvo) {
+        if (raiz == null) return null;
+
+        if (raiz.caractere.equals(alvo)) return "";
+
+        String caminhoEsq = traduzir(raiz.esquerda, alvo);
+        if (caminhoEsq != null) return "." + caminhoEsq;
+
+        String caminhoDir = traduzir(raiz.direita, alvo);
+        if (caminhoDir != null) return "-" + caminhoDir;
+
+        return null;
+    }
+
     public void remover(String codigo) {
         Node atual = this.raiz;
         int i = 0;

@@ -15,5 +15,7 @@ public class Main {
         arvore.remover("---");
         System.out.println("Removido '---' (O)");
         System.out.println("Buscando '---' (vazio): " + arvore.buscar("---"));
+
+        System.out.println(arvore.traduzir(arvore.raiz, "A"));
     }
 }
