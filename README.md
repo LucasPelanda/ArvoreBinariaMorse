@@ -92,6 +92,10 @@ public class Main {
                 // (a estrutura do caminho permanece).
                 arvore.remover(codigo);
             }
+            // [5] Chama o metodo de exibir a arvore
+            else if(opcao == 5){
+                arvore.exibir(arvore.raiz, 0);
+            }
             // Qualquer valor diferente de 0–4 apenas reexibe o menu no próximo ciclo
         }
 
@@ -292,6 +296,17 @@ public class ArvoreBinariaMorse {
 
         // Não achou neste sub-árvore
         return null;
+    }
+    // Para traduzir uma frase, percorre cada caracter e chama o metodo de tradução recursiva
+    public String traduzirFrase(String frase){
+        String codigo = "";
+        frase = frase.toUpperCase();
+
+        for(int i = 0; i < frase.length(); i++){
+            codigo = codigo + traduzir(raiz, "" + frase.charAt(i)) + " ";
+        }
+
+        return codigo;
     }
 
     // Remoção iterativa: percorre o caminho do código e,
