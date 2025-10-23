@@ -2,7 +2,7 @@ public class ArvoreBinariaMorse {
     public Node raiz;
 
     public ArvoreBinariaMorse() {
-        this.raiz = new Node(""); 
+        this.raiz = new Node("");
     }
 
     public void inicializar() {
@@ -58,7 +58,7 @@ public class ArvoreBinariaMorse {
                     atual.esquerda = new Node("");
                 }
                 atual = atual.esquerda;
-            } 
+            }
             else if (simbolo == '-') {
                 if (atual.direita == null) {
                     atual.direita = new Node("");
@@ -103,12 +103,12 @@ public class ArvoreBinariaMorse {
                 }
                 atual = atual.direita;
             }
-            
+
         }
 
         frase = frase + atual.caractere; // último caractere
 
-        return frase; 
+        return frase;
     }
 
     public String traduzir(Node raiz, String alvo) {
@@ -123,6 +123,17 @@ public class ArvoreBinariaMorse {
         if (caminhoDir != null) return "-" + caminhoDir;
 
         return null;
+    }
+
+    public String traduzirFrase(String frase){
+        String codigo = "";
+        frase = frase.toUpperCase();
+
+        for(int i = 0; i < frase.length(); i++){
+            codigo = codigo + traduzir(raiz, "" + frase.charAt(i)) + " ";
+        }
+
+        return codigo;
     }
 
     public void remover(String codigo) {

@@ -9,7 +9,7 @@ public class Main {
         int opcao = 1;
 
         while(opcao != 0){
-            System.out.println("[0] Sair\n[1] Traduzir caracter para morse\n[2] Traduzir morse para caracter\n[3] Inserir caracter\n[4] Remover morse");
+            System.out.println("[0] Sair\n[1] Traduzir frase para morse\n[2] Traduzir morse para caracter\n[3] Inserir caracter\n[4] Remover morse\n[5] Exibir Arvore");
 
             System.out.print("Digite sua escola: ");
             opcao = leitor.nextInt();
@@ -17,9 +17,9 @@ public class Main {
 
             if(opcao == 1){
                 System.out.print("Digite o caracter: ");
-                String caracter = leitor.nextLine();
+                String frase = leitor.nextLine();
 
-                System.out.println(arvore.traduzir(arvore.raiz, caracter));
+                System.out.println(arvore.traduzirFrase(frase));
             }
             else if(opcao == 2){
                 System.out.print("Digite o codigo morse: ");
@@ -43,6 +43,10 @@ public class Main {
                 String codigo = leitor.nextLine();
 
                 arvore.remover(codigo);
+            }
+
+            else if(opcao == 5){
+                arvore.exibir(arvore.raiz, 0);
             }
         }
 
